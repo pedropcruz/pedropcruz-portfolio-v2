@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import Anchor from '../atoms/Anchor'
-import SwitchTheme from '../atoms/switchTheme'
+import Anchor from '~/components/atoms/Anchor'
+import SwitchTheme from '~/components/atoms/switchTheme'
 
 export default {
   components: {
