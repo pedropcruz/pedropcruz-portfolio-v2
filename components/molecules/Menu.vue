@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import Anchor from '~/components/atoms/Anchor'
-import SwitchTheme from '~/components/atoms/switchTheme'
+import Anchor from '~/components/atoms/Anchor.vue'
+import SwitchTheme from '~/components/atoms/switchTheme.vue'
 
 export default {
   components: {

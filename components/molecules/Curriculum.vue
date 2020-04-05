@@ -43,27 +43,6 @@
         <li v-for="(item, index) in data" :key="index">{{ item }}</li>
       </ul>
     </template>
-    <!-- <template #div v-else>
-      <div
-        v-for="(item, index) in data"
-        :key="index"
-        class="content is-family-secondary"
-      >
-        <p class="is-size-5 has-text-weight-bold is-spaced is-inline-block">
-          {{ item.company }}
-        </p>
-        <p class="is-size-6 is-inline-block">{{ item.position }}</p>
-        <p class="is-size-7 is-uppercase is-marginless">
-          {{ `${item.from} - ${item.to}` }}
-        </p>
-        <p class="is-size-5">{{ item.description }}</p>
-        <ul v-show="item.responsabilities">
-          <li v-for="(responsability, key) in item.responsabilities" :key="key">
-            {{ responsability }}
-          </li>
-        </ul>
-      </div>
-    </template> -->
   </HeadingCV>
 </template>
 

@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import Logo from '../molecules/Logo'
-import Menu from '../molecules/Menu'
+import Logo from '~/components/molecules/Logo.vue'
+import Menu from '~/components/molecules/Menu.vue'
 
 export default {
   components: {

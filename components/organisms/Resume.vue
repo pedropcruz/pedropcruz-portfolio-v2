@@ -27,9 +27,9 @@
 </template>
 
 <script>
-import HeadingCV from '~/components/atoms/HeadingCV'
-import Anchor from '~/components/atoms/Anchor'
-import Curriculum from '~/components/molecules/Curriculum'
+import HeadingCV from '~/components/atoms/HeadingCV.vue'
+import Anchor from '~/components/atoms/Anchor.vue'
+import Curriculum from '~/components/molecules/Curriculum.vue'
 
 export default {
   components: {

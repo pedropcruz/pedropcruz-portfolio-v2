@@ -7,8 +7,6 @@
 </template>
 
 <script>
-// import Anchor from '../atoms/Anchor'
-
 export default {
   data() {
     return {
