@@ -1,0 +1,37 @@
+.education,
+.workExperience {
+  .item {
+    margin-bottom: $size-4;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  .content {
+    padding-bottom: $size-5;
+    @include lightAndDarkBorder(0.1);
+    border-width: 0 0 2px 0;
+    border-style: solid;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
+
+.skills,
+.tools {
+  li {
+    display: inline-block;
+    padding: #{$size-7 - 0.25rem} $size-7;
+    border-radius: $size-4;
+    margin-right: $size-7;
+    margin-top: #{$size-7 - 0.25rem};
+    @include lighAndDarkForLabels();
+  }
+}
+
+.download {
+  margin-top: $size-5;
+}

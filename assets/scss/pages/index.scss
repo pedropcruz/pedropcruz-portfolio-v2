@@ -1,0 +1,41 @@
+.hero-intro {
+  .column {
+    padding: 0 $size-1;
+  }
+
+  .introduction {
+    text-align: center;
+    @include desktop {
+      text-align: left;
+    }
+    .hey {
+      font: 600 #{$size-4}/#{$size-5} $font-sofiapro;
+      @include desktop {
+        font: 600 #{$size-1}/#{$size-1 + $size-5} $font-sofiapro;
+      }
+    }
+
+    .title {
+      margin: 0;
+      font: 800 #{$size-2}/#{$size-1 + $size-5} $font-sofiapro;
+      @include desktop {
+        font: 800 #{$size-1 + $size-4}/#{$size-1 + $size-2} $font-sofiapro;
+      }
+    }
+
+    .info {
+      font: 600 #{$size-4}/#{$size-3} $font-sofiapro;
+      @include desktop {
+        font: 600 #{$size-1}/#{$size-1 + $size-5} $font-sofiapro;
+      }
+    }
+  }
+
+  img {
+    width: 50%;
+    margin: $size-2 auto;
+    @include desktop {
+      margin: 0 0 0 auto;
+    }
+  }
+}

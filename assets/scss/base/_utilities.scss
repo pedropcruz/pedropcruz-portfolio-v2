@@ -1,0 +1,10 @@
+span.withBg {
+  body.light & {
+    background: $primary-color;
+    color: $secondary-color;
+  }
+  body.dark & {
+    background: $secondary-color;
+    color: $primary-color;
+  }
+}

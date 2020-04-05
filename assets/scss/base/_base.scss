@@ -1,0 +1,70 @@
+html {
+  body {
+    transition: all 0.3s;
+    &.light {
+      background-color: $secondary-color;
+    }
+    &.dark {
+      background-color: $primary-color;
+    }
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-karla;
+  font-weight: 700;
+}
+
+.light {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: $primary-color;
+  }
+}
+
+.dark {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    color: $secondary-color;
+  }
+}
+
+ul li {
+  @include lightAndDark();
+}
+
+hr {
+  body.light & {
+    background-color: $primary-color;
+  }
+  body.dark & {
+    background-color: $secondary-color;
+  }
+}
+
+strong {
+  @include lightAndDark();
+
+  &.is-uppercase {
+    padding: $size-7;
+    border-width: 2px;
+    border-style: solid;
+    @include lightAndDarkBorder(1);
+    margin: $size-5 0;
+  }
+}

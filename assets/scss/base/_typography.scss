@@ -1,0 +1,139 @@
+// KARLA
+
+@include font-face(
+  'Karla',
+  '~static/fonts/Karla/KarlaRegular',
+  500,
+  normal,
+  'ttf'
+);
+@include font-face(
+  'Karla',
+  '~static/fonts/Karla/KarlaItalic',
+  500,
+  italic,
+  'ttf'
+);
+@include font-face('Karla', '~static/fonts/Karla/KarlaBold', 700, bold, 'ttf');
+@include font-face(
+  'Karla',
+  '~static/fonts/Karla/KarlaBoldItalic',
+  700,
+  italic,
+  'ttf'
+);
+
+// SofiaPro
+
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProExtraLight',
+  200,
+  normal,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProExtraLightItalic',
+  200,
+  italic,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProUltraLight',
+  300,
+  normal,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProUltraLightItalic',
+  300,
+  italic,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProLight',
+  400,
+  normal,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProLightItalic',
+  400,
+  italic,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProRegular',
+  500,
+  normal,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProRegular',
+  500,
+  italic,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProMedium',
+  600,
+  normal,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProMediumItalic',
+  600,
+  italic,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProSemiBold',
+  700,
+  normal,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProSemiBoldItalic',
+  700,
+  italic,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProBold',
+  800,
+  normal,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProBoldItalic',
+  800,
+  italic,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProBlack',
+  900,
+  normal,
+  'ttf'
+);
+@include font-face(
+  'SofiaPro',
+  '~static/fonts/SofiaPro/SofiaProBlackItalic',
+  900,
+  italic,
+  'ttf'
+);

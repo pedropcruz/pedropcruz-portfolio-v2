@@ -1,0 +1,164 @@
+$rem-baseline: 16px !default;
+$rem-fallback: false !default;
+$rem-px-only: false !default;
+
+@function rem-separator($list, $separator: false) {
+  @if $separator == 'comma' or $separator == 'space' {
+    @return append($list, null, $separator);
+  }
+
+  @if function-exists('list-separator') == true {
+    @return list-separator($list);
+  }
+
+  // list-separator polyfill by Hugo Giraudel (https://sass-compatibility.github.io/#list_separator_function)
+  $test-list: ();
+  @each $item in $list {
+    $test-list: append($test-list, $item, space);
+  }
+
+  @return if($test-list == $list, space, comma);
+}
+
+@mixin rem-baseline($zoom: 100%) {
+  font-size: $zoom / 16px * $rem-baseline;
+}
+
+@function rem-convert($to, $values...) {
+  $result: ();
+  $separator: rem-separator($values);
+
+  @each $value in $values {
+    @if type-of($value) == 'number' and unit($value) == 'rem' and $to == 'px' {
+      $result: append($result, $value / 1rem * $rem-baseline, $separator);
+    } @else if
+      type-of($value) ==
+      'number' and
+      unit($value) ==
+      'px' and
+      $to ==
+      'rem'
+    {
+      $result: append($result, $value / $rem-baseline * 1rem, $separator);
+    } @else if type-of($value) == 'list' {
+      $value-separator: rem-separator($value);
+      $value: rem-convert($to, $value...);
+      $value: rem-separator($value, $value-separator);
+      $result: append($result, $value, $separator);
+    } @else {
+      $result: append($result, $value, $separator);
+    }
+  }
+
+  @return if(length($result) == 1, nth($result, 1), $result);
+}
+
+@function rem($values...) {
+  @if $rem-px-only {
+    @return rem-convert(px, $values...);
+  } @else {
+    @return rem-convert(rem, $values...);
+  }
+}
+
+@mixin rem($properties, $values...) {
+  @if type-of($properties) == 'map' {
+    @each $property in map-keys($properties) {
+      @include rem($property, map-get($properties, $property));
+    }
+  } @else {
+    @each $property in $properties {
+      @if $rem-fallback or $rem-px-only {
+        #{$property}: rem-convert(px, $values...);
+      }
+      @if not $rem-px-only {
+        #{$property}: rem-convert(rem, $values...);
+      }
+    }
+  }
+}
+
+@function str-replace($string, $search, $replace: '') {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+
+  @return $string;
+}
+
+@mixin font-face(
+  $name,
+  $path,
+  $weight: null,
+  $style: null,
+  $exts: eot woff2 woff ttf svg
+) {
+  $src: null;
+
+  $extmods: (
+    eot: '?',
+    svg: '#' + str-replace($name, ' ', '_')
+  );
+
+  $formats: (
+    otf: 'opentype',
+    ttf: 'truetype'
+  );
+
+  @each $ext in $exts {
+    $extmod: if(
+      map-has-key($extmods, $ext),
+      $ext + map-get($extmods, $ext),
+      $ext
+    );
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append(
+      $src,
+      url(quote($path + '.' + $extmod)) format(quote($format)),
+      comma
+    );
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}
+
+@mixin lighAndDarkForLabels() {
+  body.dark & {
+    color: $primary-color;
+    background-color: $secondary-color;
+  }
+  body.light & {
+    color: $secondary-color;
+    background-color: $primary-color;
+  }
+}
+
+@mixin lightAndDark() {
+  body.light & {
+    color: $primary-color;
+  }
+  body.dark & {
+    color: $secondary-color;
+  }
+}
+
+@mixin lightAndDarkBorder($opacity) {
+  body.light & {
+    border-color: rgba($primary-color, $opacity);
+  }
+  body.dark & {
+    border-color: rgba($secondary-color, $opacity);
+  }
+}

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="12px" height="12px" viewBox="0 0 12 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 57.1 (83088) - https://sketch.com -->
+    <title>twitch_light</title>
+    <desc>Created with Sketch.</desc>
+    <g id="mobile" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="work" transform="translate(-184.000000, -850.000000)" fill="#F1F4FA" fill-rule="nonzero">
+            <g id="Footer" transform="translate(29.000000, 850.000000)">
+                <g id="social_media">
+                    <g id="twitch_light" transform="translate(155.645968, 0.000000)">
+                        <path d="M0.75,0 L0,2.25 L0,10.5 L3,10.5 L3,12 L4.5,12 L6,10.5 L8.25,10.5 L11.25,7.305 L11.25,0 L0.75,0 Z M10.5,6.75 L8.4,9 L5.7405,9 L4.125,10.17525 L4.125,9 L1.5,9 L1.5,0.75 L10.5,0.75 L10.5,6.75 Z" id="Shape"></path>
+                        <polygon id="Rectangle-path" points="5.25 3 6 3 6 6 5.25 6"></polygon>
+                        <polygon id="Rectangle-path" points="7.5 3 8.25 3 8.25 6 7.5 6"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,108 @@
+header {
+  transform: translate3d(0, 0, 0);
+  transition: 0.3s all ease-out;
+  &.hidden {
+    transform: translate3d(0, -100%, 0);
+  }
+  &.is-transparent {
+    background-color: transparent;
+    background-image: none;
+  }
+}
+.navbar-brand {
+  a {
+    margin: 0 auto;
+    img {
+      width: rem(150px);
+      max-height: $size-2;
+    }
+  }
+}
+.navbar-menu {
+  background-color: transparent;
+  box-shadow: none;
+  text-align: center;
+  @for $i from 1 through 5 {
+    li:nth-of-type(#{$i}) {
+      animation-delay: calc(0.25s * #{$i});
+    }
+  }
+  li {
+    font: 700 #{$size-5}/#{$size-5} $font-karla;
+    a {
+      position: relative;
+      padding-bottom: 0.1rem;
+      &:after {
+        content: '';
+        height: rem(4px);
+        left: 50%;
+        transform: translate(-50%, 0);
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        transition: all 0.3s ease-in-out;
+      }
+      &:hover:after {
+        width: 50%;
+      }
+      &.active {
+        position: relative;
+        opacity: 0.3;
+      }
+
+      body.dark & {
+        color: $secondary-color;
+        &:after {
+          background: $secondary-color;
+        }
+      }
+
+      body.light & {
+        color: $primary-color;
+        &:after {
+          background: $primary-color;
+        }
+      }
+    }
+    input[type='checkbox'] {
+      height: 0;
+      width: 0;
+      visibility: hidden;
+      &:checked + label {
+        background: white;
+        &:after {
+          background-color: $primary-color;
+          left: rem(calc(100% - 4px));
+          transform: translateX(-100%);
+        }
+      }
+    }
+    label {
+      margin-left: $size-6;
+      position: relative;
+      cursor: pointer;
+      text-indent: rem(-9999px);
+      width: rem(32px);
+      height: rem(16px);
+      top: rem(-2px);
+      background: $primary-color;
+      display: block;
+      border: 0;
+      border-radius: rem(10px);
+      &:after {
+        content: '';
+        position: absolute;
+        top: rem(4px);
+        left: rem(4px);
+        width: rem(8px);
+        height: rem(8px);
+        background: white;
+        border-radius: rem(8px);
+        transition: 0.3s;
+      }
+      &:active:after {
+        width: rem(16px);
+      }
+    }
+  }
+}

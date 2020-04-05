@@ -1,0 +1,44 @@
+footer {
+  .navbar-menu {
+    margin-left: 0;
+    justify-content: center;
+    li {
+      body.dark & {
+        img.light-img {
+          display: block;
+        }
+        img.dark-img {
+          display: none;
+        }
+      }
+      body.light & {
+        img.light-img {
+          display: none;
+        }
+        img.dark-img {
+          display: block;
+        }
+      }
+      img {
+        width: $size-4;
+      }
+      a {
+        &:after {
+          height: 0;
+        }
+        &:hover {
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+  p {
+    font: 200 #{$size-6}/#{$size-4} $font-sofiapro;
+    body.light & {
+      color: $primary-color;
+    }
+    body.dark & {
+      color: $secondary-color;
+    }
+  }
+}
