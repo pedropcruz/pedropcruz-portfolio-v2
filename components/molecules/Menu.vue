@@ -15,7 +15,7 @@
 
 <script>
 import Anchor from '~/components/atoms/Anchor.vue'
-import SwitchTheme from '~/components/atoms/switchTheme.vue'
+import SwitchTheme from '~/components/atoms/SwitchTheme.vue'
 
 export default {
   components: {
