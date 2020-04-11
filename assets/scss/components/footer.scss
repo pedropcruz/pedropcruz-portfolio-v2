@@ -1,7 +1,13 @@
 footer {
   .navbar-menu {
+    display: grid;
     margin-left: 0;
     justify-content: center;
+
+    @include tablet {
+      display: flex;
+    }
+
     li {
       body.dark & {
         img.light-img {

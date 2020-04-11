@@ -145,6 +145,15 @@ $rem-px-only: false !default;
   }
 }
 
+@mixin lighAndDarkBackground() {
+  body.dark & {
+    background-color: $primary-color;
+  }
+  body.light & {
+    background-color: $secondary-color;
+  }
+}
+
 @mixin lightAndDark() {
   body.light & {
     color: $primary-color;

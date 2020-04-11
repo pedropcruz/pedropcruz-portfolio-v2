@@ -1,7 +1,7 @@
 <template>
   <footer class="footer">
     <div class="content has-text-centered">
-      <ul class="is-flex navbar-menu">
+      <ul class="navbar-menu">
         <li v-for="(social, index) in data" :key="index" class="navbar-item">
           <Anchor :item="constructAnchor(social)">
             <img :class="getTheme + `-img`" :src="social.url[getTheme]" />

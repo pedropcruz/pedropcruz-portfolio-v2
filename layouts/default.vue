@@ -51,11 +51,11 @@ export default {
         {
           name: 'youtube',
           to: 'https://www.youtube.com/c/PedroCruz1991'
-        },
-        {
+        }
+        /* {
           name: 'freecodecamp',
           to: 'https://www.freecodecamp.org/pedropcruz'
-        }
+        } */
       ]
     }
   },

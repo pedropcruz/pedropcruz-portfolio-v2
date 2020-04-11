@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <section class="hero is-fullheight">
+  <main class="container">
+    <section class="section hero is-fullheight">
       <div class="hero-body">
         <div class="container">
           <div class="content has-text-centered">
@@ -29,7 +29,7 @@
       :pdfBtn="downloadBtn"
       :workExperience="workExperience"
     />
-  </div>
+  </main>
 </template>
 
 <script>
