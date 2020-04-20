@@ -12,11 +12,6 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
-      },
-      {
-        hid: 'og:image',
-        property: 'og:image',
-        content: '@/assets/images/imageForSEO.jpg'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -32,7 +27,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  pulgins: [],
   /*
    ** Nuxt.js dev-modules
    */

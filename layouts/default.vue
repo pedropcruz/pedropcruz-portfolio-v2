@@ -59,13 +59,6 @@ export default {
       ]
     }
   },
-  head() {
-    return {
-      bodyAttrs: {
-        class: this.$store.state.toggleDark.theme
-      }
-    }
-  },
   created() {
     this.sociallinks.map((item) => {
       item.url = {
@@ -73,6 +66,13 @@ export default {
         light: require(`~/assets/images/${item.name}_light.svg`)
       }
     })
+  },
+  head() {
+    return {
+      bodyAttrs: {
+        class: this.$store.state.toggleDark.theme
+      }
+    }
   }
 }
 </script>
