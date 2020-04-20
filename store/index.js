@@ -1,7 +1,6 @@
-import { cookieFromRequest } from '~/utils'
 export const actions = {
-  nuxtServerInit({ commit }, { req }) {
-    const theme = cookieFromRequest(req, 'theme') || 'light'
-    commit('toggleDark/SET_DARK_MODE', theme)
+  nuxtClientInit({ commit }) {
+    const theme = window.localStorage.getItem('theme') || 'light'
+    commit('toggleDark/SET_THEME', theme)
   }
 }

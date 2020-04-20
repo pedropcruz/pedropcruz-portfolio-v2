@@ -1,5 +1,5 @@
 export const state = () => ({
-  theme: 'light'
+  theme: localStorage.getItem('theme') || 'light'
 })
 
 export const getters = {
@@ -7,14 +7,14 @@ export const getters = {
 }
 
 export const mutations = {
-  SET_DARK_MODE(state, theme) {
+  SET_THEME(state, theme) {
     state.theme = theme
   }
 }
 
 export const actions = {
   updateClass({ commit }, { theme }) {
-    document.cookie = `theme=${theme}`
-    commit('SET_DARK_MODE', theme)
+    window.localStorage.setItem('theme', theme)
+    commit('SET_THEME', theme)
   }
 }
