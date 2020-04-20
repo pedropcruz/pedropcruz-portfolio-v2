@@ -16,7 +16,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '~/assets/images/imageForSEO.jpg'
+        content: '@/assets/images/imageForSEO.jpg'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -32,7 +32,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [{ src: '~plugins/ga.js', mode: 'client' }],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
@@ -55,7 +55,8 @@ export default {
         accessToken: 'suXNmExvWraIOXQeRXAw9Att',
         cacheProvider: 'memory'
       }
-    ]
+    ],
+    '@nuxtjs/google-analytics'
   ],
   /*
    ** Axios module configuration
@@ -66,6 +67,10 @@ export default {
    ** Build configuration
    */
   styleResources: ['~assets/scss/abstracts/_variables.scss'],
+  googleAnalytics: {
+    id: 'UA-116283572-1',
+    dev: false
+  },
   modern: true,
   build: {
     postcss: {
