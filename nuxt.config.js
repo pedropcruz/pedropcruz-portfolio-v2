@@ -4,7 +4,7 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '| pedropcruz.pt',
+    title: 'Home | pedropcruz.pt',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -12,9 +12,14 @@ export default {
         hid: 'description',
         name: 'description',
         content: process.env.npm_package_description || ''
+      },
+      {
+        hid: 'og:image',
+        name: 'og:image',
+        content: 'images/imageForSEO.jpg'
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: '/image/x-icon', href: '/favicon.ico' }]
   },
   /*
    ** Customize the progress-bar color

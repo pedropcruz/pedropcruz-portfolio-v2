@@ -200,11 +200,6 @@ export default {
           hid: 'description',
           name: 'description',
           content: this.description
-        },
-        {
-          hid: 'og:image',
-          property: 'og:image',
-          content: require('~/assets/images/imageForSEO.jpg')
         }
       ]
     }
