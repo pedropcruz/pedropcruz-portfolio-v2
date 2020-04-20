@@ -42,6 +42,8 @@ export default {
   },
   data() {
     return {
+      title: 'About me | pedropcruz.pt',
+      description: 'Do you want to hire me? Check the CV on this page!',
       education: [
         {
           title: 'Udemy',
@@ -130,11 +132,6 @@ export default {
           position: 'Frontend Developer (Contractor)',
           description:
             'Working as a freelancer remote frontend developer for video streaming CMS with react, styled-components, jest, enzyme, storybook'
-          // responsabilities: [
-          //   'Bug fixing',
-          //   'Helped maintain documentation for the project',
-          //   'Worked with React, styled-components, Jest, Storybook'
-          // ]
         },
         {
           company: 'Airbeem',
@@ -143,10 +140,6 @@ export default {
           position: 'Frontend Developer (Contractor)',
           description:
             'Developed a product with a team about video streaming as a freelancer remote frontend developer. The stack used was Nuxt, Bulma, Sass, Jest, Storybook'
-          // responsabilities: [
-          //   'Working on new features for a Video Streaming app',
-          //   'Worked with Nuxt, Bulma, Sass, Jest, Storybook'
-          // ]
         },
         {
           company: 'RentLovers',
@@ -155,11 +148,6 @@ export default {
           position: 'Frontend Developer | UI/UX Designer',
           description:
             'Responsible for UI/UX layers for the platform and clean code as a frontend developer. Used Sketch + Adobe Illustrator for branding and web app design and React/styled-components for frontend development.'
-          // responsabilities: [
-          //   'Responsible for UI/UX Layers',
-          //   'Responsible for Frontend development, used the best coding practices',
-          //   'Builted a platform to connect landlords with renters'
-          // ]
         },
         {
           company: 'diconium',
@@ -168,10 +156,6 @@ export default {
           position: 'Software Engineer',
           description:
             'I had 2 projects during the time I have been at diconium. One worked as a team leader of the project, on the retail market developed with javascript, jQuery, JavaSpring and Less. The other project, on the automotive business area, worked with React, Sass, webpack, Apollo GraphQL, Node'
-          // responsabilities: [
-          //   'Leading an old project on retail market (eCommerce project), worked with JavaSpring, javascript, css, jQuery and Less',
-          //   'Worked as frontend developer for a mechanical parts eCommerce, worked with React, Sass, webpack, Apollo GraphQL, Node'
-          // ]
         },
         {
           company: 'Grupo Impresa',
@@ -180,10 +164,6 @@ export default {
           position: 'Frontend Developer',
           description:
             'I had a lot of projects about media brands like Expresso, SIC, SICnoticias, VISÃO, BLITZ. I was responsible only for maintaining the websites and complete issues from superiors. Developed with Twig templating, Symphony framework (PHP), javascript(es5+), Sass, Less'
-          // responsabilities: [
-          //   'Worked on new features / bug fixes on every branding website of a specific niche.',
-          //   'Developed with javascript (es5+), Twig Templating, Symphony Framework (PHP)'
-          // ]
         },
         {
           company: 'KCSIT',
@@ -192,10 +172,6 @@ export default {
           position: 'Junior Consultant',
           description:
             'Have built a backoffice for companies seeing analytics values for their own brands. I developed with HTML5/CSS3/JS(vanilla), handlebars, jQuery, Bootstrap'
-          // responsabilities: [
-          //   'Developed a new Backoffice for social marketing about a specific company.',
-          //   'Built on HTML5/CSS3/JS(vanilla)/Bootstrap, jQuery, handlebars'
-          // ]
         },
         {
           company: 'Viatecla',
@@ -204,10 +180,6 @@ export default {
           position: 'Junior Software Developer',
           description:
             'I had made a design and code backoffice for international conference on the tourism business area. From their sponsors, the backoffice gives the opportunity to schedule meetings with clients or possible investor where they meet during the event. Developed with HTML5/CSS3/JS(vanilla), jQuery, Bootstrap, Razor, C# (everything on MVC pattern)'
-          // responsabilities: [
-          //   'Responsible for UI/UX Design for a specific part of a complex project on tourism bussiness area',
-          //   'Developed with Razor (HTML5/CSS3/Javascript(vanilla)), jQuery, Bootstrap. Everything under a MVC Pattern'
-          // ]
         },
         {
           company: 'CDSI',
@@ -216,10 +188,18 @@ export default {
           position: 'Junior Software Developer',
           description:
             'Worked on a new backoffice for insurance companies where they see a list with all their clients about any insurance. Worked with ASP.NET, VB.NET, HTML5/CSS3/JS(vanilla), jQuery'
-          // responsabilities: [
-          //   'Developed a new backoffice for insurance companies',
-          //   'Builded with ASP.NET, VB.NET, HTML5/CSS3/JS(vanilla), jQuery'
-          // ]
+        }
+      ]
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
         }
       ]
     }

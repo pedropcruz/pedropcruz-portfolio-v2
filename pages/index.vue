@@ -18,6 +18,8 @@ export default {
   },
   data() {
     return {
+      title: 'Home | pedropcruz.pt',
+      description: 'Check out what projects I made and check my Resume!',
       projects: [
         {
           responsibility: 'Fullstack | UI/UX Designer',
@@ -36,6 +38,18 @@ export default {
           image: fccImg,
           className: 'fcc'
           // '#0a0a23'
+        }
+      ]
+    }
+  },
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
         }
       ]
     }
