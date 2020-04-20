@@ -16,8 +16,7 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content:
-          process.env._AXIOS_BASE_URL_ + '~/assets/images/imageForSEO.jpg'
+        content: '~/assets/images/imageForSEO.jpg'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
