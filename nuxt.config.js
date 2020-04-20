@@ -17,9 +17,14 @@ export default {
         content: process.env.npm_package_description || ''
       },
       {
+        hid: 'og:url',
+        name: 'og:url',
+        content: 'www.pedropcruz.pt'
+      },
+      {
         hid: 'og:image',
         name: 'og:image',
-        content: 'images/imageForSEO.jpg'
+        content: 'https://www.pedropcruz.pt/_nuxt/img/5ff0360.svg'
       }
     ],
     link: [{ rel: 'icon', type: '/image/x-icon', href: '/favicon.ico' }]
