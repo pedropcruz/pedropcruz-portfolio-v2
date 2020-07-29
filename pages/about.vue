@@ -126,6 +126,14 @@ export default {
       },
       workExperience: [
         {
+          company: 'Fidgrove',
+          from: '05/2020',
+          to: 'PRESENT',
+          position: 'Frontend Developer',
+          description:
+            'Designed all UI/UX for entire product and respective bradning, institucional website with CMS integrated and made code for the Product. Used Nuxt, Bulma, SASS, Storybook, jest and deployed with Docker to Azure Web services'
+        },
+        {
           company: 'Piksel',
           from: '07/2019',
           to: '04/2020',
