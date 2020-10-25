@@ -1,5 +1,5 @@
 <template>
-  <HeadingCV :name="name" :className="name">
+  <Title :name="name" :className="name">
     <template #div v-if="checkInsideData">
       <div
         v-for="(item, key) in data"
@@ -43,16 +43,11 @@
         <li v-for="(item, index) in data" :key="index">{{ item }}</li>
       </ul>
     </template>
-  </HeadingCV>
+  </Title>
 </template>
 
 <script>
-import HeadingCV from '~/components/atoms/HeadingCV'
-
 export default {
-  components: {
-    HeadingCV
-  },
   props: {
     name: {
       type: String,

@@ -1,5 +1,5 @@
 export default {
-  mode: 'spa',
+  ssr: false,
   router: {
     base: '/'
   },
@@ -10,25 +10,11 @@ export default {
     title: 'Home | pedropcruz.pt',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      },
-      {
-        hid: 'og:url',
-        name: 'og:url',
-        content: 'www.pedropcruz.pt'
-      },
-      {
-        hid: 'og:image',
-        name: 'og:image',
-        content: 'https://www.pedropcruz.pt/_nuxt/img/5ff0360.svg'
-      }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
     ],
     link: [{ rel: 'icon', type: '/image/x-icon', href: '/favicon.ico' }]
   },
+  components: true,
   /*
    ** Customize the progress-bar color
    */
@@ -40,7 +26,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  pulgins: [{ src: '~/plugins/theme', mode: 'client' }],
+  pulgins: [{ src: '~/plugins/theme', ssr: false }],
   /*
    ** Nuxt.js dev-modules
    */
@@ -57,13 +43,7 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
-    [
-      'storyblok-nuxt',
-      {
-        accessToken: 'suXNmExvWraIOXQeRXAw9Att',
-        cacheProvider: 'memory'
-      }
-    ],
+    '@nuxtjs/sitemap',
     '@nuxtjs/google-analytics'
   ],
   /*
@@ -75,10 +55,16 @@ export default {
    ** Build configuration
    */
   styleResources: ['~assets/scss/abstracts/_variables.scss'],
+
   googleAnalytics: {
     id: 'UA-116283572-1',
     dev: false
   },
+
+  sitemap: {
+    hostname: 'https://www.pedropcruz.pt'
+  },
+
   modern: true,
   build: {
     postcss: {

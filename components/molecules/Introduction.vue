@@ -18,7 +18,7 @@
           </div>
           <div class="column is-half-desktop is-paddingless">
             <figure class="image">
-              <img src="~/assets/images/me_vec_light.svg" alt="me" />
+              <img src="/images/me_vec_light.svg" alt="me" />
             </figure>
           </div>
         </div>

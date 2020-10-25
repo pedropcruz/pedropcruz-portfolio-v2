@@ -1,7 +1,7 @@
 <template>
   <header
     :class="{ hidden: !showNavBar }"
-    class="navbar is-transparent is-fixed-top container"
+    class="navbar is-transparent is-fixed-top container pt-5 pb-5"
     role="navigation"
     aria-label="main navigation"
   >
@@ -11,14 +11,7 @@
 </template>
 
 <script>
-import Logo from '~/components/molecules/Logo.vue'
-import Menu from '~/components/molecules/Menu.vue'
-
 export default {
-  components: {
-    Logo,
-    Menu
-  },
   data() {
     return {
       showNavBar: true,

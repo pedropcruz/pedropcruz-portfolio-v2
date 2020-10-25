@@ -27,7 +27,7 @@ export default {
     getTheme: {
       immediate: true,
       handler(val) {
-        if (val) this.image = require(`~/assets/images/logo_${val}.svg`)
+        if (val) this.image = `/images/logo_${val}.svg`
       }
     }
   }

@@ -1,22 +1,13 @@
 <template>
   <div>
-    <navbar />
+    <Navbar />
     <nuxt />
     <Footer :data="sociallinks" />
   </div>
 </template>
 
-<style lang="scss"></style>
-
 <script>
-import Navbar from '~/components/organisms/Navbar.vue'
-import Footer from '~/components/organisms/Footer.vue'
-
 export default {
-  components: {
-    Navbar,
-    Footer
-  },
   data() {
     return {
       sociallinks: [
@@ -51,24 +42,32 @@ export default {
         {
           name: 'youtube',
           to: 'https://www.youtube.com/c/PedroCruz1991'
-        }
-        /* {
+        },
+        {
           name: 'freecodecamp',
           to: 'https://www.freecodecamp.org/pedropcruz'
-        } */
+        }
       ]
     }
   },
   created() {
     this.sociallinks.map((item) => {
       item.url = {
-        dark: require(`~/assets/images/${item.name}.svg`),
-        light: require(`~/assets/images/${item.name}_light.svg`)
+        dark: `/images/${item.name}.svg`,
+        light: `/images/${item.name}_light.svg`
       }
     })
   },
   head() {
     return {
+      title: this.title,
+      meta: [
+        {
+          hid: 'description',
+          name: 'description',
+          content: this.description
+        }
+      ],
       bodyAttrs: {
         class: this.$store.state.toggleDark.theme
       }

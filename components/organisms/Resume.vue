@@ -3,19 +3,19 @@
     <div class="container">
       <div class="columns">
         <div class="column is-4">
-          <Education :data="education" name="education" />
-          <Skills :data="skills" name="skills"></Skills>
-          <Tools :data="tools" name="tools"></Tools>
-          <Heading :name="pdfBtn.name" :className="pdfBtn.class">
+          <Curriculum :data="education" name="education" />
+          <Curriculum :data="skills" name="skills" />
+          <Curriculum :data="tools" name="tools" />
+          <Title :name="pdfBtn.name" :className="pdfBtn.class">
             <template v-slot:div>
               <Anchor :item="{ isAnchor: true, href: pdfBtn.url }">
                 {{ pdfBtn.name }}
               </Anchor>
             </template>
-          </Heading>
+          </Title>
         </div>
         <div class="column is-8">
-          <WorkExperience
+          <Curriculum
             :data="workExperience"
             :isWorkExperience="true"
             name="workExperience"
@@ -27,19 +27,7 @@
 </template>
 
 <script>
-import HeadingCV from '~/components/atoms/HeadingCV.vue'
-import Anchor from '~/components/atoms/Anchor.vue'
-import Curriculum from '~/components/molecules/Curriculum.vue'
-
 export default {
-  components: {
-    Anchor,
-    Heading: HeadingCV,
-    Education: Curriculum,
-    Skills: Curriculum,
-    Tools: Curriculum,
-    WorkExperience: Curriculum
-  },
   props: {
     education: {
       type: Array,
