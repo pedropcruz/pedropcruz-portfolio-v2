@@ -1,5 +1,6 @@
 export default {
   ssr: false,
+  target: 'static',
   router: {
     base: '/'
   },
@@ -7,7 +8,6 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: 'Home | pedropcruz.pt',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' }

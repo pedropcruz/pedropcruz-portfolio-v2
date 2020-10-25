@@ -7,30 +7,36 @@
 
 <script>
 export default {
-  data() {
-    return {
-      title: 'Home | pedropcruz.pt',
-      description: 'Check out what projects I made and check my Resume!',
-      projects: [
-        {
-          responsibility: 'Fullstack | UI/UX Designer',
-          title: 'ERISING - Efficiency Rising',
-          skills: ['React', 'Bulma', 'Sass', 'Nodejs'],
-          to: 'https://www.erising.pt/',
-          image: '/images/erising.svg',
-          className: 'erising'
-          // '#63A163'
-        },
-        {
-          responsibility: 'Frontend Developer',
-          title: 'freeCodeCamp Lisbon',
-          skills: ['Nuxt', 'Bulma', 'Adonisjs', 'MySQL'],
-          to: 'https://www.freecodecamplisbon.org',
-          image: '/images/fcc.svg',
-          className: 'fcc'
-          // '#0a0a23'
-        }
-      ]
+  data: () => ({
+    url: '',
+    title: 'Home | pedropcruz.pt',
+    description: 'Check out what projects I made and check my Resume!',
+    projects: [
+      {
+        responsibility: 'Fullstack | UI/UX Designer',
+        title: 'ERISING - Efficiency Rising',
+        skills: ['React', 'Bulma', 'Sass', 'Nodejs'],
+        to: 'https://www.erising.pt/',
+        image: '/images/erising.svg',
+        className: 'erising'
+        // '#63A163'
+      },
+      {
+        responsibility: 'Frontend Developer',
+        title: 'freeCodeCamp Lisbon',
+        skills: ['Nuxt', 'Bulma', 'Adonisjs', 'MySQL'],
+        to: 'https://www.freecodecamplisbon.org',
+        image: '/images/fcc.svg',
+        className: 'fcc'
+        // '#0a0a23'
+      }
+    ]
+  }),
+  created() {
+    if (process.env.NODE_ENV === 'production') {
+      this.url = 'https://www.pedropcruz.pt'
+    } else {
+      this.url = process.env.baseUrl
     }
   },
   head() {
@@ -40,22 +46,22 @@ export default {
         {
           hid: 'description',
           name: 'description',
-          content: this.description
+          content: 'Check out what projects I made and check my Resume!'
         },
         {
           hid: 'og:url',
           name: 'og:url',
-          content: 'www.pedropcruz.pt'
+          content: 'https://www.pedropcruz.pt'
         },
         {
           hid: 'og:image',
           name: 'og:image',
-          content: '/images/imageForSEO.jpg'
+          content: '/images/seo.jpg'
         },
         {
           hid: 'og:image:alt',
           name: 'og:image:alt',
-          content: '/images/imageForSEO.jpg'
+          content: '/images/seo.jpg'
         }
       ]
     }
