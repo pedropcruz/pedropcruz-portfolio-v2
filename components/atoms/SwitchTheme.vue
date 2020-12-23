@@ -19,15 +19,14 @@ export default {
   },
   computed: {
     getTheme() {
-      return this.$store.getters['toggleDark/theme']
+      return this.$colorMode.value
     }
   },
   methods: {
     setTheme() {
       this.toggleBtn = !this.toggleBtn
-      this.$store.dispatch('toggleDark/updateClass', {
-        theme: this.getTheme === 'dark' ? 'light' : 'dark'
-      })
+      this.$colorMode.value =
+        this.$colorMode.value === 'light' ? 'dark' : 'light'
     }
   }
 }

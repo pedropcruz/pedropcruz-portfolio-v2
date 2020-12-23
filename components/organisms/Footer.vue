@@ -33,9 +33,7 @@ export default {
       return new Date().getFullYear()
     },
     getTheme() {
-      return this.$store.getters['toggleDark/theme'] === 'light'
-        ? 'dark'
-        : 'light'
+      return this.$colorMode.value
     }
   },
   methods: {

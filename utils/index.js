@@ -7,6 +7,6 @@ export default {
   githubURL: 'https://github.com/pedropcruz',
   siteTitle: 'pedropcruz.pt - Need a frontend? Contact me',
   siteDesc: "Hi there! I'm a Frontend Developer and Designer from Portugal",
-  img: process.env.CLIENT_URL + '/seo.png',
+  img: process.env.CLIENT_URL + '/seo.jpg',
   siteType: 'website'
 }

@@ -59,7 +59,7 @@ export default {
   head() {
     return {
       bodyAttrs: {
-        class: this.$store.state.toggleDark.theme
+        class: this.$colorMode.value
       }
     }
   }

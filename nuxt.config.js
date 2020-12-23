@@ -6,9 +6,6 @@ const meta = getMeta()
 export default {
   ssr: false,
   target: 'static',
-  router: {
-    base: '/'
-  },
   /*
    ** Headers of the page
    */
@@ -58,13 +55,14 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  pulgins: [{ src: '~/plugins/theme', ssr: false }],
+  /* pulgins: [{ src: '~/plugins/theme', ssr: false }], */
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/color-mode'
   ],
   /*
    ** Nuxt.js modules
@@ -95,7 +93,7 @@ export default {
   },
 
   sitemap: {
-    hostname: 'https://www.pedropcruz.pt',
+    hostname: process.env.CLIENT_URL,
     gzip: true
   },
 
@@ -108,6 +106,12 @@ export default {
       sitemap: process.env.CLIENT_URL + '/sitemap.xml'
     }
   ],
+
+  colorMode: {
+    preference: 'system',
+    classSuffix: '',
+    fallback: 'light'
+  },
 
   modern: true,
   build: {},

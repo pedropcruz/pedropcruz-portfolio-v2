@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     getTheme() {
-      return this.$store.getters['toggleDark/theme']
+      return this.$colorMode.value
     }
   },
   watch: {
