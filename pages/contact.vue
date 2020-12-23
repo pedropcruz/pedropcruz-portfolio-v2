@@ -7,7 +7,7 @@
             <strong>
               For work inquires please email me:
               <br />
-              <a href="mailto:pedropcruz@outlook.pt">pedropcruz@outlook.pt</a>
+              <a href="mailto:pedropcruz@outlook.pt">me@pedropcruz.pt</a>
             </strong>
           </div>
         </div>
