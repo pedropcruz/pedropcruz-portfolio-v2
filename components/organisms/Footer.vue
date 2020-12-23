@@ -7,11 +7,15 @@
           :key="index"
           :href="social.to"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           class="link"
         >
           <figure class="image is-24x24 mx-3">
-            <img :class="getTheme + `-img`" :src="social.url[getTheme]" />
+            <img
+              :class="getTheme + `-img`"
+              :src="social.url[getTheme]"
+              :alt="social.name"
+            />
           </figure>
         </a>
       </div>
@@ -33,7 +37,7 @@ export default {
       return new Date().getFullYear()
     },
     getTheme() {
-      return this.$colorMode.value
+      return this.$colorMode.value === 'dark' ? 'light' : 'dark'
     }
   },
   methods: {

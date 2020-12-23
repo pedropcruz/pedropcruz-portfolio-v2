@@ -5,11 +5,10 @@
       :href="item.href"
       :class="item.class"
       target="_blank"
+      rel="noopener noreferrer"
       ><slot
     /></a>
-    <nuxt-link v-if="!item.isAnchor" :to="item.href" :class="item.class"
-      ><slot
-    /></nuxt-link>
+    <nuxt-link v-else :to="item.href" :class="item.class"><slot /></nuxt-link>
   </div>
 </template>
 
