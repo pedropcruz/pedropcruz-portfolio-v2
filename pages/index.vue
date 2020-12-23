@@ -33,7 +33,7 @@ export default {
       },
       {
         responsibility: 'Frontend Developer',
-        title: 'freeCodeCamp Lisbon',
+        title: 'freeCodeCamp Lisbon - dev events based in Lisbon',
         skills: ['Nuxt', 'Buefy', 'Netlify', 'Netlify Functions'],
         to: 'https://www.freecodecamplisbon.org',
         image: '/images/fcc.svg',

@@ -39,9 +39,11 @@
           </div>
         </div>
         <div class="media-left">
-          <figure class="image is-200x200">
-            <img :alt="project.title" :src="project.image" />
-          </figure>
+          <a :href="project.to" target="_blank" rel="noopener noreferrer">
+            <figure class="image is-200x200">
+              <img :alt="project.title" :src="project.image" />
+            </figure>
+          </a>
         </div>
       </article>
     </div>
