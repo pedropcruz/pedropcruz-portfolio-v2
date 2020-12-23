@@ -1,26 +1,26 @@
 <template>
   <section class="section project">
-    <h1 class="title is-size-1">Projects ❤️</h1>
+    <h1 class="title is-size-1">Projects 💻</h1>
     <div
       v-for="(project, index) in projects"
       :key="index"
       :class="project.className"
       class="box"
     >
-      <article class="media">
+      <article class="media is-justify-content-center is-align-items-center">
         <div class="media-content">
           <div class="content">
             <h1 class="title">{{ project.title }}</h1>
-            <h2 class="subtitle">{{ project.responsibility }}</h2>
-            <ul>
-              <li
+            <h2 class="subtitle is-5 mt-3">{{ project.responsibility }}</h2>
+            <div class="tags">
+              <span
                 v-for="(skill, idx) in project.skills"
                 :key="idx"
-                class="is-size-4"
+                class="tag is-large is-rounded"
               >
                 {{ skill }}
-              </li>
-            </ul>
+              </span>
+            </div>
             <nav class="level">
               <div class="level-left">
                 <h2 class="subtitle">
@@ -39,7 +39,7 @@
           </div>
         </div>
         <div class="media-left">
-          <figure class="image">
+          <figure class="image is-200x200">
             <img :alt="project.title" :src="project.image" />
           </figure>
         </div>
@@ -49,12 +49,7 @@
 </template>
 
 <script>
-import Anchor from '~/components/atoms/Anchor'
-
 export default {
-  components: {
-    Anchor
-  },
   props: {
     projects: {
       type: Array,
@@ -63,3 +58,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.is-200x200 img {
+  width: 200px;
+  height: 200px;
+}
+</style>

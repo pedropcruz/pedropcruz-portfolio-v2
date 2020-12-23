@@ -1,25 +1,27 @@
 <template>
   <footer class="footer">
-    <div class="content has-text-centered">
-      <ul class="navbar-menu">
-        <li v-for="(social, index) in data" :key="index" class="navbar-item">
-          <Anchor :item="constructAnchor(social)">
+    <div class="container has-text-centered">
+      <div class="content is-flex is-justify-content-center">
+        <a
+          v-for="(social, index) in data"
+          :key="index"
+          :href="social.to"
+          target="_blank"
+          rel="noopener"
+          class="link"
+        >
+          <figure class="image is-24x24 mx-3">
             <img :class="getTheme + `-img`" :src="social.url[getTheme]" />
-          </Anchor>
-        </li>
-      </ul>
+          </figure>
+        </a>
+      </div>
       <p>© {{ getDate }} designed and coded by Pedro Cruz</p>
     </div>
   </footer>
 </template>
 
 <script>
-import Anchor from '~/components/atoms/Anchor'
-
 export default {
-  components: {
-    Anchor
-  },
   props: {
     data: {
       type: Array,
@@ -47,4 +49,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.link {
+  &:hover {
+    opacity: 0.7;
+  }
+}
+</style>

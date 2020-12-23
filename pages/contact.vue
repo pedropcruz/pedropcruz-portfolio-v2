@@ -17,23 +17,15 @@
 </template>
 
 <script>
+import getMeta from '@/utils/meta'
+
 export default {
-  data() {
-    return {
-      title: 'Contact | pedropcruz.pt',
-      description: 'Need help? Contact me!'
-    }
-  },
   head() {
     return {
-      title: this.title,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: this.description
-        }
-      ]
+      title: 'Contact | pedropcruz.pt',
+      meta: getMeta({
+        description: 'Need help? Contact me!'
+      })
     }
   }
 }

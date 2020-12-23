@@ -14,14 +14,7 @@
 </template>
 
 <script>
-import Anchor from '~/components/atoms/Anchor.vue'
-import SwitchTheme from '~/components/atoms/SwitchTheme.vue'
-
 export default {
-  components: {
-    Anchor,
-    SwitchTheme
-  },
   props: {
     items: {
       type: Array,

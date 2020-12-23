@@ -1,3 +1,8 @@
+import global from './utils/index'
+import getMeta from './utils/meta'
+
+const meta = getMeta()
+
 export default {
   ssr: false,
   target: 'static',
@@ -8,11 +13,38 @@ export default {
    ** Headers of the page
    */
   head: {
+    htmlAttrs: {
+      lang: 'en-GB'
+    },
+    title: 'pedropcruz.pt - Frontend Developer from Portugal 🇵🇹',
     meta: [
+      ...meta,
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: global.siteDesc || ''
+      },
+      { property: 'og:site_name', content: global.siteName || '' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: global.siteDesc || ''
+      },
+      { property: 'og:image:width', content: '740' },
+      { property: 'og:image:height', content: '300' },
+      { name: 'twitter:site', content: global.siteName || '' },
+      { name: 'twitter:card', content: 'summary_large_image' }
     ],
-    link: [{ rel: 'icon', type: '/image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        hid: 'canonical',
+        rel: 'canonical',
+        href: global.siteUrl
+      }
+    ]
   },
   components: true,
   /*
@@ -44,7 +76,8 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
     '@nuxtjs/sitemap',
-    '@nuxtjs/google-analytics'
+    '@nuxtjs/google-analytics',
+    '@nuxtjs/robots'
   ],
   /*
    ** Axios module configuration
@@ -62,23 +95,22 @@ export default {
   },
 
   sitemap: {
-    hostname: 'https://www.pedropcruz.pt'
+    hostname: 'https://www.pedropcruz.pt',
+    gzip: true
   },
 
-  modern: true,
-  build: {
-    postcss: {
-      preset: {
-        features: {
-          customProperties: false
-        }
-      }
+  robots: [
+    {
+      UserAgent: '*',
+      Disallow: '/_nuxt/'
     },
-    /*
-     ** You can extend webpack config here
-     */
-    extend(config, ctx) {}
-  },
+    {
+      sitemap: process.env.CLIENT_URL + '/sitemap.xml'
+    }
+  ],
+
+  modern: true,
+  build: {},
   generate: {
     fallback: true
   }

@@ -6,12 +6,22 @@
 </template>
 
 <script>
+import getMeta from '@/utils/meta'
+
 export default {
   data: () => ({
-    url: '',
     title: 'Home | pedropcruz.pt',
     description: 'Check out what projects I made and check my Resume!',
     projects: [
+      {
+        responsibility: 'Frontend Developer | UI/UX Developer',
+        title: 'Fidgrove - Flowing Lap Engineering',
+        skills: ['Nuxt', 'Bulma', 'Sass', 'Strapi'],
+        to: 'https://www.fidgrove.com/',
+        image: '/images/fidgrove.svg',
+        className: 'fidgrove'
+        // '#15223f'
+      },
       {
         responsibility: 'Fullstack | UI/UX Designer',
         title: 'ERISING - Efficiency Rising',
@@ -24,7 +34,7 @@ export default {
       {
         responsibility: 'Frontend Developer',
         title: 'freeCodeCamp Lisbon',
-        skills: ['Nuxt', 'Bulma', 'Adonisjs', 'MySQL'],
+        skills: ['Nuxt', 'Buefy', 'Netlify', 'Netlify Functions'],
         to: 'https://www.freecodecamplisbon.org',
         image: '/images/fcc.svg',
         className: 'fcc'
@@ -32,38 +42,12 @@ export default {
       }
     ]
   }),
-  created() {
-    if (process.env.NODE_ENV === 'production') {
-      this.url = 'https://www.pedropcruz.pt'
-    } else {
-      this.url = process.env.baseUrl
-    }
-  },
   head() {
     return {
-      title: this.title,
-      meta: [
-        {
-          hid: 'description',
-          name: 'description',
-          content: 'Check out what projects I made and check my Resume!'
-        },
-        {
-          hid: 'og:url',
-          name: 'og:url',
-          content: 'https://www.pedropcruz.pt'
-        },
-        {
-          hid: 'og:image',
-          name: 'og:image',
-          content: '/images/seo.jpg'
-        },
-        {
-          hid: 'og:image:alt',
-          name: 'og:image:alt',
-          content: '/images/seo.jpg'
-        }
-      ]
+      title: 'Home | pedropcruz.pt',
+      meta: getMeta({
+        description: 'Check out what projects I made and check my Resume!'
+      })
     }
   }
 }

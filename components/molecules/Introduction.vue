@@ -11,7 +11,7 @@
               <h1 class="title name">I'm Pedro Cruz.</h1>
               <h2 class="info">
                 I'm a <span class="withBg">frontend developer</span> and Graphic
-                Designer. Currently working at
+                Designer. Currently at
                 <span class="withBg">Fidgrove</span>
               </h2>
             </div>

@@ -1,15 +1,28 @@
 .project.project {
   .erising {
     background-color: $erisingColor;
-    li {
+    .tags span {
       background: $erisingSecondaryColor;
     }
   }
 
   .fcc {
     background-color: $fccColor;
-    li {
+    .tags span {
       background: $fccSecondaryColor;
+    }
+  }
+
+  .fidgrove {
+    background-color: $fidgroveColor;
+    h1.title,
+    h2.subtitle,
+    h2.subtitle a.level-item {
+      color: $fidgroveSecondaryColor;
+    }
+    .tags span {
+      background: $fidgroveSecondaryColor;
+      color: $fidgroveColor;
     }
   }
 

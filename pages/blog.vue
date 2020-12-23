@@ -17,11 +17,6 @@
 
 <script>
 export default {
-  // data() {
-  //   return {
-  //     categories: []
-  //   }
-  // }
   asyncData(ctx) {
     return ctx.app.$storyapi
       .get('cdn/stories', {

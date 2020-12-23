@@ -12,13 +12,8 @@
   </section>
 </template>
 <script>
-import Anchor from '~/components/atoms/Anchor.vue'
-
 export default {
   name: 'Error500',
-  components: {
-    Anchor
-  },
   props: {
     error: {
       type: Object,
