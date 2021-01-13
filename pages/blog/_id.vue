@@ -21,10 +21,12 @@
                     v-for="social in socialShare"
                     :key="social.name"
                     :network="social.name"
-                    :url="$prismic.asText(article['og-url'])"
+                    :url="getUrl"
                     :title="$prismic.asText(article['og-title'])"
                     :description="$prismic.asText(article['og-description'])"
                     :quote="$prismic.asText(article['og-description'])"
+                    :media="article.image.url"
+                    twitter-user="pedropcruzthe1"
                     class="level-item p-3 has-background-primary"
                     hashtags="pedropcruz,frontend,portuguesedeveloper"
                   >
@@ -75,7 +77,6 @@
                   </template>
                   <template v-else-if="slice.slice_type === 'code'">
                     <pre>
-                      {{ $prismic.asText(slice.primary.coding) }}
                       <code>
                         {{ $prismic.asText(slice.primary.coding) }}
                       </code>
@@ -124,6 +125,8 @@ import { pt } from 'date-fns/locale'
 
 export default {
   data: () => ({
+    id: '',
+    url: process.env.CLIENT_URL,
     socialShare: [
       {
         name: 'facebook'
@@ -135,6 +138,9 @@ export default {
     ]
   }),
   computed: {
+    getUrl() {
+      return `${this.url}/blog/${this.id}`
+    },
     getTheme() {
       return this.$colorMode.value === 'dark' ? 'light' : 'dark'
     },
@@ -159,8 +165,10 @@ export default {
   async asyncData({ $prismic, params, error }) {
     try {
       const article = (await $prismic.api.getByUID('blog', params.id)).data
-
-      return { article }
+      return {
+        article,
+        id: params.id
+      }
     } catch (_e) {
       error({ statusCode: 404, message: 'Page not found' })
     }
@@ -174,7 +182,7 @@ export default {
         img: this.article['og-image'].url,
         description: this.$prismic.asText(this.article['og-description']),
         title: this.$prismic.asText(this.article['og-title']),
-        url: this.$prismic.asText(this.article['og-url'])
+        url: this.getUrl
       })
     }
 

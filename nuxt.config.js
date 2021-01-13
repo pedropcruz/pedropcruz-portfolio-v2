@@ -68,6 +68,7 @@ export default {
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
+    '@nuxtjs/dotenv',
     '@nuxtjs/date-fns'
   ],
   /*
@@ -93,7 +94,8 @@ export default {
   axios: {},
 
   prismic: {
-    endpoint: process.env.API_URL
+    endpoint: process.env.API_URL,
+    preview: false
   },
 
   dateFns: {},
