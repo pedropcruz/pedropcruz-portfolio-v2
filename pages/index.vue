@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main>
     <Introduction />
     <Projects :projects="projects" />
   </main>
@@ -16,7 +16,7 @@ export default {
       {
         responsibility: 'Frontend Developer | UI/UX Developer',
         title: 'Fidgrove - Flowing Lap Engineering',
-        skills: ['Nuxt', 'Bulma', 'Sass', 'Strapi'],
+        skills: ['Nuxt', 'Bulma', 'Sass', 'Strapi', 'Vuepress', 'Azure'],
         to: 'https://www.fidgrove.com/',
         image: '/images/fidgrove.svg',
         className: 'fidgrove'
@@ -25,7 +25,7 @@ export default {
       {
         responsibility: 'Fullstack | UI/UX Designer',
         title: 'ERISING - Efficiency Rising',
-        skills: ['React', 'Bulma', 'Sass', 'Nodejs'],
+        skills: ['React', 'Bulma', 'Sass', 'Nodejs', 'Vercel'],
         to: 'https://www.erising.pt/',
         image: '/images/erising.svg',
         className: 'erising'
@@ -52,5 +52,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped></style>

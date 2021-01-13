@@ -1,7 +1,7 @@
 <template>
   <header
     :class="{ hidden: !showNavBar }"
-    class="navbar is-transparent is-fixed-top container pt-5 pb-5"
+    class="navbar is-fixed-top container pt-5 pb-5"
     role="navigation"
     aria-label="main navigation"
   >
@@ -29,12 +29,12 @@ export default {
           class: 'navbar-item',
           name: 'about'
         },
-        // {
-        //   isAnchor: false,
-        //   href: '/blog',
-        //   class: 'navbar-item',
-        //   name: 'blog'
-        // },
+        {
+          isAnchor: false,
+          href: '/blog',
+          class: 'navbar-item',
+          name: 'blog'
+        },
         // {
         //   isAnchor: false,
         //   href: '/services',

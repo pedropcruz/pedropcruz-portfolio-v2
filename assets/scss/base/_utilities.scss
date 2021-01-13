@@ -1,10 +1,24 @@
 span.withBg {
-  body.light & {
+  .light & {
     background: $primary-color;
     color: $secondary-color;
   }
-  body.dark & {
+  .dark & {
     background: $secondary-color;
     color: $primary-color;
   }
+}
+
+pre {
+  white-space: pre-wrap;
+  overflow-x: auto;
+  padding: $size-6;
+  background: black;
+  color: white;
+  tab-size: 2;
+}
+
+pre[data-lang]::before {
+  content: attr(data-lang);
+  display: block;
 }

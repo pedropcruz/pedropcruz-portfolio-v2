@@ -1,12 +1,11 @@
-html {
-  body {
-    transition: all 0.3s;
-    &.light {
-      background-color: $secondary-color;
-    }
-    &.dark {
-      background-color: $primary-color;
-    }
+html,
+body {
+  transition: all 0.3s;
+  &.light {
+    background-color: $secondary-color;
+  }
+  &.dark {
+    background-color: $primary-color;
   }
 }
 
@@ -29,6 +28,14 @@ h6 {
   h6,
   p {
     color: $primary-color;
+    &.has-text-primary,
+    &.is-secondary {
+      color: $primary-color;
+    }
+    &.has-text-info,
+    &.is-primary {
+      color: $secondary-color;
+    }
   }
 }
 
@@ -41,6 +48,14 @@ h6 {
   h6,
   p {
     color: $secondary-color;
+    &.has-text-primary,
+    &.is-secondary {
+      color: $secondary-color;
+    }
+    &.has-text-info,
+    &.is-primary {
+      color: $primary-color;
+    }
   }
 }
 
@@ -49,12 +64,7 @@ ul li {
 }
 
 hr {
-  body.light & {
-    background-color: $primary-color;
-  }
-  body.dark & {
-    background-color: $secondary-color;
-  }
+  @include lighAndDarkBackground();
 }
 
 strong {

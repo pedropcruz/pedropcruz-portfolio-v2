@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <Navbar />
     <nuxt />
     <Footer :data="sociallinks" />
@@ -57,10 +57,11 @@ export default {
     })
   },
   head() {
+    const obj = {
+      class: `${this.$colorMode.value} has-navbar-fixed-top`
+    }
     return {
-      bodyAttrs: {
-        class: this.$colorMode.value
-      }
+      htmlAttrs: obj
     }
   }
 }

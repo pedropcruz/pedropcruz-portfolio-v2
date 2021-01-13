@@ -18,6 +18,12 @@ export default {
       ...meta,
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { 'http-equiv': 'Content-Type', content: 'text/html; charset=utf-8' },
+      {
+        'http-equiv': 'Content-Type',
+        content: 'text/html; charset=ISO-8859-1'
+      },
+      { name: 'robots', content: 'index, follow' },
       {
         hid: 'description',
         name: 'description',
@@ -55,14 +61,14 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  /* pulgins: [{ src: '~/plugins/theme', ssr: false }], */
+  plugins: ['~/plugins/disqus'],
   /*
    ** Nuxt.js dev-modules
    */
   buildModules: [
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
-    '@nuxtjs/color-mode'
+    '@nuxtjs/date-fns'
   ],
   /*
    ** Nuxt.js modules
@@ -73,15 +79,24 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
+    '@nuxtjs/color-mode',
     '@nuxtjs/sitemap',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/robots'
+    '@nuxtjs/robots',
+    '@nuxtjs/prismic',
+    'vue-social-sharing/nuxt'
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+
+  prismic: {
+    endpoint: process.env.API_URL
+  },
+
+  dateFns: {},
   /*
    ** Build configuration
    */
@@ -108,9 +123,9 @@ export default {
   ],
 
   colorMode: {
-    preference: 'system',
     classSuffix: '',
-    fallback: 'light'
+    fallback: 'light',
+    storageKey: 'nuxt-color-mode'
   },
 
   modern: true,

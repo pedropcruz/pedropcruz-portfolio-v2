@@ -12,11 +12,6 @@
 
 <script>
 export default {
-  data() {
-    return {
-      toggleBtn: true
-    }
-  },
   computed: {
     getTheme() {
       return this.$colorMode.value
@@ -24,9 +19,8 @@ export default {
   },
   methods: {
     setTheme() {
-      this.toggleBtn = !this.toggleBtn
-      this.$colorMode.value =
-        this.$colorMode.value === 'light' ? 'dark' : 'light'
+      this.$colorMode.preference =
+        this.$colorMode.preference === 'light' ? 'dark' : 'light'
     }
   }
 }

@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main>
     <section class="hero is-fullheight">
       <div class="hero-body">
         <div class="container has-text-centered">

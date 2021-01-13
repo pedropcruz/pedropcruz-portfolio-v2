@@ -52,14 +52,14 @@ header {
         opacity: 0.3;
       }
 
-      body.dark & {
+      .dark & {
         color: $secondary-color;
         &:after {
           background: $secondary-color;
         }
       }
 
-      body.light & {
+      .light & {
         color: $primary-color;
         &:after {
           background: $primary-color;

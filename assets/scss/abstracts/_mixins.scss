@@ -136,39 +136,39 @@ $rem-px-only: false !default;
 }
 
 @mixin lighAndDarkForLabels() {
-  body.dark & {
+  .dark & {
     color: $primary-color;
     background-color: $secondary-color;
   }
-  body.light & {
+  .light & {
     color: $secondary-color;
     background-color: $primary-color;
   }
 }
 
 @mixin lighAndDarkBackground() {
-  body.dark & {
+  .dark & {
     background-color: $primary-color;
   }
-  body.light & {
+  .light & {
     background-color: $secondary-color;
   }
 }
 
 @mixin lightAndDark() {
-  body.light & {
+  .light & {
     color: $primary-color;
   }
-  body.dark & {
+  .dark & {
     color: $secondary-color;
   }
 }
 
 @mixin lightAndDarkBorder($opacity) {
-  body.light & {
+  .light & {
     border-color: rgba($primary-color, $opacity);
   }
-  body.dark & {
+  .dark & {
     border-color: rgba($secondary-color, $opacity);
   }
 }
