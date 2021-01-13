@@ -166,7 +166,6 @@ export default {
     }
   },
   head() {
-    console.log(this.article)
     const meta = {
       title: `✍️ pedropcruz.pt - ${this.$prismic.asText(
         this.article['title-tag']
