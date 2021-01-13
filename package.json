@@ -23,7 +23,6 @@
     "@nuxt/components": "^1.2.5",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/bulma": "^1.2.1",
-    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/prismic": "^1.2.4",
     "@nuxtjs/robots": "^2.4.2",
@@ -36,6 +35,7 @@
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^2.0.2",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/date-fns": "^1.4.3",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.2.0",
