@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     getTheme() {
-      return this.$colorMode.value
+      return this.$colorMode.value === 'dark' ? 'dark' : 'light'
     }
   },
   watch: {
