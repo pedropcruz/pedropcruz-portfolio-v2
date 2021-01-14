@@ -13,10 +13,13 @@
               <nav class="level is-mobile">
                 <div class="level-left">
                   <div class="level-item">
-                    <nuxt-link to="/blog">View all articles</nuxt-link>
+                    <nuxt-link to="/blog">Ver todos os artigos</nuxt-link>
                   </div>
                 </div>
-                <div class="level-right social-share is-mobile">
+                <!--  <div class="level-right social-share is-mobile">
+                  <li class="level-item">
+                    <p class="has-text-primary">Partilha:</p>
+                  </li>
                   <ShareNetwork
                     v-for="social in socialShare"
                     :key="social.name"
@@ -37,7 +40,7 @@
                       />
                     </figure>
                   </ShareNetwork>
-                </div>
+                </div> -->
               </nav>
               <hr class="hr has-background-primary" />
               <article class="has-text-primary my-6">
@@ -157,8 +160,7 @@ export default {
     },
     pageConfig() {
       return {
-        title: this.article.title,
-        category_id: 'development'
+        title: this.article.title
       }
     }
   },
@@ -183,7 +185,14 @@ export default {
         description: this.$prismic.asText(this.article['og-description']),
         title: this.$prismic.asText(this.article['og-title']),
         url: this.getUrl
-      })
+      }),
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: this.getUrl
+        }
+      ]
     }
 
     return meta

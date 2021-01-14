@@ -84,7 +84,14 @@ export default {
       meta: getMeta({
         description:
           'Want to know my thoughts? The blog is in portuguese, check it now!'
-      })
+      }),
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `${process.env.CLIENT_URL}/blog`
+        }
+      ]
     }
   }
 }

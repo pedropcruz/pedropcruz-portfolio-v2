@@ -25,7 +25,14 @@ export default {
       title: 'Contact | pedropcruz.pt',
       meta: getMeta({
         description: 'Need help? Contact me!'
-      })
+      }),
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `${process.env.CLIENT_URL}/contact`
+        }
+      ]
     }
   }
 }

@@ -200,7 +200,14 @@ export default {
       title: 'About | pedropcruz.pt',
       meta: getMeta({
         description: 'Do you want to hire me? Check the CV on this page!'
-      })
+      }),
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `${process.env.CLIENT_URL}/about`
+        }
+      ]
     }
   }
 }

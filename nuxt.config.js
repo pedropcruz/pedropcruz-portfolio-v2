@@ -122,7 +122,7 @@ export default {
   robots: [
     {
       UserAgent: '*',
-      Disallow: '/_nuxt/'
+      Disallow: process.env.NODE_ENV === 'production' ? '/_nuxt/' : '/'
     },
     {
       sitemap: process.env.CLIENT_URL + '/sitemap.xml'

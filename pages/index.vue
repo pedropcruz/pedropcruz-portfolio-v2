@@ -47,7 +47,14 @@ export default {
       title: 'Home | pedropcruz.pt',
       meta: getMeta({
         description: 'Check out what projects I made and check my Resume!'
-      })
+      }),
+      link: [
+        {
+          hid: 'canonical',
+          rel: 'canonical',
+          href: `${process.env.CLIENT_URL}/`
+        }
+      ]
     }
   }
 }
