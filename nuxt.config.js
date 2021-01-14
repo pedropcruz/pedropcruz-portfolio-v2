@@ -4,7 +4,6 @@ import getMeta from './utils/meta'
 const meta = getMeta()
 
 export default {
-  ssr: false,
   target: 'static',
   /*
    ** Headers of the page
