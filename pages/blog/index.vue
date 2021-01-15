@@ -2,10 +2,10 @@
   <main class="hero is-medium">
     <div class="hero-body">
       <section class="section">
-        <div class="columns is-multiline is-desktop">
+        <div class="columns is-multiline">
           <div
             v-for="article in articles.results"
-            class="column is-6-tablet is-4-desktop"
+            class="column is-6-tablet is-4-widescreen"
           >
             <div class="card p-6 has-background-white-ter">
               <div class="card-image">

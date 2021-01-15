@@ -63,6 +63,12 @@
                       v-html="$prismic.asHtml(slice.primary.text)"
                     ></div>
                   </template>
+                  <template v-else-if="slice.slice_type === 'heading'">
+                    <div
+                      class="is-secondary"
+                      v-html="$prismic.asHtml(slice.primary.text)"
+                    ></div>
+                  </template>
                   <template
                     v-else-if="slice.slice_type === 'image_with_caption'"
                   >
@@ -73,9 +79,9 @@
                         :width="slice.primary.image.dimensions.width"
                         :height="slice.primary.image.dimensions.height"
                       />
-                      <figcaption>
-                        {{ $prismic.asText(slice.primary.caption) }}
-                      </figcaption>
+                      <figcaption
+                        v-html="$prismic.asHtml(slice.primary.caption)"
+                      ></figcaption>
                     </figure>
                   </template>
                   <template v-else-if="slice.slice_type === 'code'">
@@ -233,7 +239,29 @@ export default {
 
 div.is-secondary {
   p,
-  strong {
+  strong,
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: #22313f;
+  }
+}
+
+.has-background-white-ter {
+  figcaption {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: #22313f;
+    }
+  }
+  ul li {
     color: #22313f;
   }
 }

@@ -94,7 +94,14 @@ export default {
 
   prismic: {
     endpoint: process.env.API_URL,
-    preview: false
+    apiOptions: {
+      routes: [
+        {
+          type: 'blog',
+          path: '/blog/:id'
+        }
+      ]
+    }
   },
 
   dateFns: {},
