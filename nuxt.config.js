@@ -74,6 +74,7 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    'nuxt-i18n',
     // Doc: https://github.com/nuxt-community/modules/tree/master/packages/bulma
     '@nuxtjs/bulma',
     // Doc: https://axios.nuxtjs.org/usage
@@ -91,6 +92,10 @@ export default {
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  i18n: {
+    locales: ['en', 'pt'],
+    defaultLocale: 'en'
+  },
 
   prismic: {
     endpoint: process.env.API_URL,

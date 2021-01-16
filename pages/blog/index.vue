@@ -108,10 +108,10 @@ export default {
 
     .card-image {
       margin-top: -6rem;
-      box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.1);
 
       img {
-        border-radius: 5px;
+        border-radius: 6px;
+        box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.5);
       }
     }
     .card-content {

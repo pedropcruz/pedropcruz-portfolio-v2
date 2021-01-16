@@ -72,17 +72,23 @@
                   <template
                     v-else-if="slice.slice_type === 'image_with_caption'"
                   >
-                    <figure class="image no-margin">
-                      <img
-                        :src="slice.primary.image.url"
-                        :alt="slice.primary.image.alt"
-                        :width="slice.primary.image.dimensions.width"
-                        :height="slice.primary.image.dimensions.height"
-                      />
-                      <figcaption
-                        v-html="$prismic.asHtml(slice.primary.caption)"
-                      ></figcaption>
-                    </figure>
+                    <div class="columns is-centered">
+                      <div :class="article['image-class']" class="column">
+                        <figure class="image no-margin">
+                          <img
+                            :src="slice.primary.image.url"
+                            :alt="slice.primary.image.alt"
+                            :width="`${slice.primary.image.dimensions.width}px`"
+                            :height="
+                              `${slice.primary.image.dimensions.height}px`
+                            "
+                          />
+                          <figcaption
+                            v-html="$prismic.asHtml(slice.primary.caption)"
+                          ></figcaption>
+                        </figure>
+                      </div>
+                    </div>
                   </template>
                   <template v-else-if="slice.slice_type === 'code'">
                     <pre>
@@ -102,6 +108,27 @@
                         v-html="$prismic.asHtml(slice.primary.cite)"
                       ></cite>
                     </blockquote>
+                  </template>
+                  <template v-else-if="slice.slice_type === 'gallery'">
+                    <div class="columns is-multiline is-align-items-center">
+                      <div
+                        v-for="(item, i) in slice.items"
+                        :key="`image_${i}`"
+                        class="column"
+                      >
+                        <figure class="image m-0">
+                          <img
+                            :src="item['image-item'].url"
+                            :width="item['image-item'].dimensions.width"
+                            :height="item['image-item'].dimensions.height"
+                            :alt="item['image-item'].alt"
+                          />
+                          <figcaption
+                            v-html="$prismic.asHtml(item['caption-item'])"
+                          ></figcaption>
+                        </figure>
+                      </div>
+                    </div>
                   </template>
                   <template v-else-if="slice.slice_type === 'video'">
                     <figure class="image is-16by9 m-0">
@@ -212,7 +239,8 @@ export default {
   overflow: inherit;
   .card-image .image img {
     margin-top: -6rem;
-    border-radius: 4px;
+    border-radius: 6px;
+    box-shadow: 0 0.5em 1em -0.125em rgba(0, 0, 0, 0.5);
   }
 
   .social-share .level-item {
@@ -257,7 +285,8 @@ div.is-secondary {
     h3,
     h4,
     h5,
-    h6 {
+    h6,
+    p {
       color: #22313f;
     }
   }

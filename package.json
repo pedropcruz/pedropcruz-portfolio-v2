@@ -30,6 +30,7 @@
     "@nuxtjs/style-resources": "^1.0.0",
     "bulma": "^0.9.1",
     "nuxt": "^2.14.12",
+    "nuxt-i18n": "^6.18.0",
     "vue-disqus": "^4.0.1",
     "vue-social-sharing": "^3.0.4"
   },
