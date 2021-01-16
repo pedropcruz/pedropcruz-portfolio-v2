@@ -100,6 +100,19 @@ export default {
 <style lang="scss" scoped>
 .column {
   margin-top: 6rem;
+
+  @media (min-width: 769px) and (max-width: 1215px) {
+    &:nth-child(n + 2) {
+      margin-top: 9rem;
+    }
+  }
+
+  @media screen and (min-width: 1216px) {
+    &:nth-child(n + 4) {
+      margin-top: 11rem;
+    }
+  }
+
   .card {
     overflow: initial;
     display: flex;
