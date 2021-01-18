@@ -145,7 +145,11 @@
               </article>
               <hr class="hr has-background-primary my-6" />
               <div class="is-block mt-6">
-                <Disqus :pageConfig="pageConfig" />
+                <Disqus
+                  :pageConfig="pageConfig"
+                  :ssoConfig="ssoConfig"
+                  lang="pt_BR"
+                />
               </div>
             </div>
           </div>
@@ -193,7 +197,14 @@ export default {
     },
     pageConfig() {
       return {
-        title: this.article.title
+        title: this.$prismic.asText(this.article.title),
+        identifier: this.getUrl,
+        url: this.getUrl
+      }
+    },
+    ssoConfig() {
+      return {
+        name: this.$prismic.asText(this.article.title)
       }
     }
   },
