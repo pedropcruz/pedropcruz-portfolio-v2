@@ -68,7 +68,8 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/dotenv',
-    '@nuxtjs/date-fns'
+    '@nuxtjs/date-fns',
+    '@/modules/sitemapRouteGenerator'
   ],
   /*
    ** Nuxt.js modules
@@ -122,7 +123,9 @@ export default {
 
   sitemap: {
     hostname: process.env.CLIENT_URL,
-    gzip: true
+    cacheTime: 1000 * 60 * 15,
+    gzip: true,
+    exclude: ['/_nuxt/']
   },
 
   env: {

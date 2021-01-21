@@ -1,52 +1,50 @@
 <template>
   <main class="hero is-medium">
     <div class="hero-body">
-      <section class="section">
-        <div class="columns is-multiline">
-          <div
-            v-for="article in articles.results"
-            class="column is-6-tablet is-4-widescreen"
-          >
-            <div class="card p-6 has-background-white-ter">
-              <div class="card-image">
-                <figure class="image">
-                  <img
-                    :src="article.data.image.thumbnail.url"
-                    :width="article.data.image.thumbnail.dimensions.width"
-                    :height="article.data.image.thumbnail.dimensions.height"
-                    :alt="article.data.image.thumbnail.alt"
-                  />
-                </figure>
-              </div>
-              <div class="card-content px-0">
-                <time
-                  datetime="2016-1-1"
-                  class="is-capitalized has-text-weight-bold is-size-6 is-block mb-5"
-                  >{{ parsedDate(article.data.date) }}</time
+      <div class="columns is-multiline">
+        <div
+          v-for="article in articles.results"
+          class="column is-6-tablet is-4-widescreen"
+        >
+          <div class="card p-6 has-background-white-ter">
+            <div class="card-image">
+              <figure class="image">
+                <img
+                  :src="article.data.image.thumbnail.url"
+                  :width="article.data.image.thumbnail.dimensions.width"
+                  :height="article.data.image.thumbnail.dimensions.height"
+                  :alt="article.data.image.thumbnail.alt"
+                />
+              </figure>
+            </div>
+            <div class="card-content px-0">
+              <time
+                datetime="2016-1-1"
+                class="is-capitalized has-text-weight-bold is-size-6 is-block mb-5"
+                >{{ parsedDate(article.data.date) }}</time
+              >
+              <nuxt-link :to="`/blog/${article.uid}`">
+                <h4 class="title is-2 has-text-primary mb-5">
+                  {{ $prismic.asText(article.data.title) }}
+                </h4>
+              </nuxt-link>
+              <h5 class="subtitle is-5 has-text-primary">
+                {{ $prismic.asText(article.data.description) }}
+              </h5>
+            </div>
+            <div class="card-footer">
+              <p class="card-footer-item is-justify-content-flex-end">
+                <nuxt-link
+                  :to="`/blog/${article.uid}`"
+                  class="button is-primary has-text-weight-medium"
                 >
-                <nuxt-link :to="`/blog/${article.uid}`">
-                  <h4 class="title is-2 has-text-primary mb-5">
-                    {{ $prismic.asText(article.data.title) }}
-                  </h4>
+                  CONTINUA A LER
                 </nuxt-link>
-                <h5 class="subtitle is-5 has-text-primary">
-                  {{ $prismic.asText(article.data.description) }}
-                </h5>
-              </div>
-              <div class="card-footer">
-                <p class="card-footer-item is-justify-content-flex-end">
-                  <nuxt-link
-                    :to="`/blog/${article.uid}`"
-                    class="button is-primary has-text-weight-medium"
-                  >
-                    CONTINUA A LER
-                  </nuxt-link>
-                </p>
-              </div>
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   </main>
 </template>

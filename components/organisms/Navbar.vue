@@ -1,7 +1,6 @@
 <template>
   <header
-    :class="{ hidden: !showNavBar }"
-    class="navbar is-fixed-top container pt-5 pb-5"
+    class="navbar container pt-5 pb-5"
     role="navigation"
     aria-label="main navigation"
   >
@@ -14,8 +13,6 @@
 export default {
   data() {
     return {
-      showNavBar: true,
-      lastScrollPosition: 0,
       items: [
         {
           isAnchor: false,
@@ -48,24 +45,6 @@ export default {
           name: 'contact'
         }
       ]
-    }
-  },
-  mounted() {
-    window.addEventListener('scroll', this.onScroll)
-  },
-  beforeDestroy() {
-    window.removeEventListener('scroll', this.onScroll)
-  },
-  methods: {
-    onScroll() {
-      const getCurrentScrollPos =
-        window.pageYOffset || document.documentElement.scrollTop
-
-      if (getCurrentScrollPos < 0) return
-
-      this.showNavBar = getCurrentScrollPos < this.lastScrollPosition
-
-      this.lastScrollPosition = getCurrentScrollPos
     }
   }
 }

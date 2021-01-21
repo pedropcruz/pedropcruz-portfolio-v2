@@ -57,11 +57,10 @@ export default {
     })
   },
   head() {
-    const obj = {
-      class: `${this.$colorMode.value} has-navbar-fixed-top`
-    }
     return {
-      htmlAttrs: obj
+      htmlAttrs: {
+        class: `${this.$colorMode.value}`
+      }
     }
   }
 }
