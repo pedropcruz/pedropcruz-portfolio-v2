@@ -29,16 +29,19 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/style-resources": "^1.0.0",
     "bulma": "^0.9.1",
+    "fs-extra": "^9.1.0",
     "nuxt": "^2.14.12",
     "nuxt-i18n": "^6.18.0",
     "prismic-dom": "^2.2.4",
     "vue-disqus": "^4.0.1",
+    "vue-expandable-image": "^0.1.0",
     "vue-social-sharing": "^3.0.4"
   },
   "devDependencies": {
+    "@aceforth/nuxt-optimized-images": "^1.4.0",
     "@nuxtjs/color-mode": "^2.0.2",
-    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/date-fns": "^1.4.3",
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.2.0",
     "babel-eslint": "^10.0.1",
@@ -47,9 +50,18 @@
     "eslint-plugin-nuxt": "^1.0.0",
     "eslint-plugin-prettier": "^3.3.1",
     "husky": "^2.6.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^9.0.0",
+    "imagemin-pngquant": "^9.0.1",
+    "imagemin-svgo": "^8.0.0",
     "lint-staged": "^8.2.1",
+    "lqip-loader": "^2.2.1",
     "node-sass": "^4.14.1",
     "prettier": "^1.16.4",
-    "sass-loader": "^8.0.2"
+    "responsive-loader": "^2.3.0",
+    "sass-loader": "^8.0.2",
+    "sharp": "^0.27.0",
+    "sqip-loader": "^1.0.0",
+    "webp-loader": "^0.6.0"
   }
 }

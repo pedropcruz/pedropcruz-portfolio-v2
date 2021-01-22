@@ -69,11 +69,42 @@
                       v-html="$prismic.asHtml(slice.primary.text)"
                     ></div>
                   </template>
+
+                  <!-- Expandable images -->
+                  <template
+                    v-else-if="slice.slice_type === 'image_with_caption1'"
+                  >
+                    <div
+                      :class="slice.primary['image_class_parent']"
+                      class="columns is-centered"
+                    >
+                      <div :class="slice.primary['image_class']" class="column">
+                        <figure class="image no-margin">
+                          <expandable-image
+                            :src="slice.primary.image.url"
+                            :alt="slice.primary.image.alt"
+                            :width="`${slice.primary.image.dimensions.width}px`"
+                            :height="
+                              `${slice.primary.image.dimensions.height}px`
+                            "
+                          >
+                          </expandable-image>
+                          <figcaption
+                            v-html="$prismic.asHtml(slice.primary.caption)"
+                          ></figcaption>
+                        </figure>
+                      </div>
+                    </div>
+                  </template>
+
                   <template
                     v-else-if="slice.slice_type === 'image_with_caption'"
                   >
-                    <div class="columns is-centered">
-                      <div :class="article['image-class']" class="column">
+                    <div
+                      :class="slice.primary['image_class_parent']"
+                      class="columns is-centered"
+                    >
+                      <div :class="slice.primary['image_class']" class="column">
                         <figure class="image no-margin">
                           <img
                             :src="slice.primary.image.url"
@@ -313,6 +344,14 @@ div.is-secondary {
   p,
   ul li {
     color: #22313f;
+  }
+
+  em {
+    background: #22313f;
+    color: #e4f1fe;
+    font-style: italic;
+    padding: 0.075em 0.35em;
+    border-radius: 0.3rem;
   }
 }
 </style>

@@ -60,7 +60,10 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['~/plugins/disqus'],
+  plugins: [
+    '~/plugins/disqus',
+    { src: '~plugins/expandable-image', mode: 'client' }
+  ],
   /*
    ** Nuxt.js dev-modules
    */
@@ -69,6 +72,7 @@ export default {
     '@nuxtjs/eslint-module',
     '@nuxtjs/dotenv',
     '@nuxtjs/date-fns',
+    '@aceforth/nuxt-optimized-images',
     '@/modules/sitemapRouteGenerator'
   ],
   /*
@@ -108,6 +112,10 @@ export default {
         }
       ]
     }
+  },
+
+  optimizedImages: {
+    optimizeImages: true
   },
 
   dateFns: {},
