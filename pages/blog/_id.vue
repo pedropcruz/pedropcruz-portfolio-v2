@@ -5,7 +5,11 @@
         <div class="card p-6 has-background-white-ter">
           <div class="card-image">
             <figure class="image">
-              <img :src="article.image.url" :alt="article.image.alt" />
+              <img
+                :src="article.image.url"
+                :alt="article.image.alt"
+                loading="lazy"
+              />
             </figure>
           </div>
           <div class="card-content p-0 mt-5">
@@ -87,6 +91,7 @@
                             :height="
                               `${slice.primary.image.dimensions.height}px`
                             "
+                            loading="lazy"
                           >
                           </expandable-image>
                           <figcaption
@@ -122,11 +127,12 @@
                     </div>
                   </template>
                   <template v-else-if="slice.slice_type === 'code'">
-                    <pre>
-                      <code>
-                        {{ $prismic.asText(slice.primary.coding) }}
-                      </code>
-                    </pre>
+                    <code
+                      v-highlight
+                      :class="slice.primary.key_paired"
+                      v-html="$prismic.asHtml(slice.primary.coding)"
+                      class="p-0"
+                    ></code>
                   </template>
                   <template v-else-if="slice.slice_type === 'quote'">
                     <blockquote class="has-text-centered" cite="alguém do além">
@@ -135,8 +141,8 @@
                       </h3>
                       <cite
                         v-if="slice.primary.cite"
-                        class="is-size-6 is-italic has-text-weight-light"
                         v-html="$prismic.asHtml(slice.primary.cite)"
+                        class="is-size-6 is-italic has-text-weight-light"
                       ></cite>
                     </blockquote>
                   </template>

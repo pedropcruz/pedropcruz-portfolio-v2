@@ -48,7 +48,14 @@ export default {
       }
     ]
   },
-  components: true,
+  components: [
+    '~/components/atoms',
+    '~/components/molecules',
+    '~/components/organisms',
+    '~/components/atoms/**/*',
+    '~/components/molecules/**/*',
+    '~/components/organisms/**/*'
+  ],
   /*
    ** Customize the progress-bar color
    */
@@ -90,7 +97,13 @@ export default {
     '@nuxtjs/google-analytics',
     '@nuxtjs/robots',
     '@nuxtjs/prismic',
-    'vue-social-sharing/nuxt'
+    'vue-social-sharing/nuxt',
+    [
+      'nuxt-highlightjs',
+      {
+        style: 'qtcreator_dark'
+      }
+    ]
   ],
   /*
    ** Axios module configuration
